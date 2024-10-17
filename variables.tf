@@ -3,7 +3,7 @@ variable "organization_name" {
     type    = string
 }
 variable "github_app_installation_id" {
-    default = 56079337
+    default = 56081205
     type    = number
 }
 variable "github_organization_name" {
