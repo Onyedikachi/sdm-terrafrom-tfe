@@ -13,7 +13,7 @@ locals {
         }
          "sdm-github" = {
             description = "Example description of workspace"
-            execution_mode = "local"
+            execution_mode = "remote"
             project_id = module.project["sdm-project"].id
             vcs_repo_identifier = "${var.github_organization_name}/sdm-terraform-github"
         }
