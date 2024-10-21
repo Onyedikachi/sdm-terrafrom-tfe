@@ -71,5 +71,24 @@ locals {
         },
       ]
     }
+     "scm-product-service-prod" = {
+      description         = "Automation for product service resources."
+      execution_mode      = "remote"
+      project_id          = module.project["sdm-project"].id
+      vcs_repo_identifier = "${var.github_organization_name}/sdm-terraform-product-service"
+
+      variables = [
+        {
+          category = "terraform"
+          key      = "cluster_name"
+          value    = "sdm-kachi-prod"
+        },
+        {
+          category = "terraform"
+          key      = "environment"
+          value    = "prod"
+        },
+      ]
+    }
   }
 }
