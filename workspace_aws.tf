@@ -4,8 +4,8 @@ locals {
       for name, network in local.network : "${name}-aws-network" => {
         description         = "Automation for AWS network resources."
         execution_mode      = "remote"
-        project_id          = module.project["fem-eci-project"].id
-        vcs_repo_identifier = "${var.github_organization_name}/fem-eci-terraform-aws-network"
+        project_id          = module.project["sdm-project"].id
+        vcs_repo_identifier = "${var.github_organization_name}/sdm-terraform-aws-network"
 
         variables = [
           {
@@ -31,8 +31,8 @@ locals {
       for name, cluster in local.cluster : "${name}-aws-cluster-${cluster.environment}" => {
         description         = "Automation for AWS cluster resources."
         execution_mode      = "remote"
-        project_id          = module.project["fem-eci-project"].id
-        vcs_repo_identifier = "${var.github_organization_name}/fem-eci-terraform-aws-cluster"
+        project_id          = module.project["sdm-project"].id
+        vcs_repo_identifier = "${var.github_organization_name}/sdm-terraform-aws-cluster"
 
         variables = [
           {
