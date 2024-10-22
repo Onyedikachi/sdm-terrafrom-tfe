@@ -9,7 +9,9 @@ module "project" {
 }
 
 module "workspace" {
-    for_each = local.workspace
+    for_each = merge(
+      local.workspace, local.workspace_aws
+    )
     source  = "ALT-F4-LLC/workspace/tfe"
     version = "0.6.0"
 
